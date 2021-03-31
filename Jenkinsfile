@@ -61,7 +61,7 @@ pipeline {
             steps {
                 script {
                     sleep(time:5,unit:"SECONDS")
-                    def response = httpRequest contentType { url: 'http://$TEST_NODE_IP:8081/', timeout: 30 }
+                    def response = httpRequest contentType { url: "http://$TEST_NODE_IP:8081/", timeout: 30 }
                     if (response.status != 200) {
                         error "SmokeTest failed, please read logs..."
                     }
